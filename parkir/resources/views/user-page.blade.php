@@ -21,6 +21,8 @@
         </style>
     </head>
     <body>
+        @include('nav')
+
     @if(Auth::user()->role == 1)
         <h1>User Page</h1>
 
@@ -38,6 +40,12 @@
             <button style="border-radius: 5px" type="submit" class="btn btn-outline-primary">Check-in</button>
         </div>
         </form>
+
+        @if (session('code'))
+            <div class="alert alert-success">
+                Unique Code : {{ session('code') }}
+            </div>
+        @endif
 
 
         <form action="{{ route('check-out') }}" method="POST">

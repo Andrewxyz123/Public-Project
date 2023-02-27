@@ -22,7 +22,18 @@ class ParkingController extends Controller
     public function checkIn(Request $request){
         // dd($request['plate']);
 
+        $pattern = '/[A-Z]{1,2} [0-9]{2,4} [A-Z]{2,3}/';
+        $result = preg_match( $pattern, $request['plate']);
+        if($result != 1){
+            return redirect()->back()->withErrors('Plate Number Format not fit!');
+        }
+
+
         $id = DB::table('parking')->value('id');
+
+        if(Parking::where('plate_number', $request['plate'])->exists()){
+            return redirect()->back()->withErrors('Plate Number Not yet checked out!');
+        }
 
         if(is_null($id)){
             $uqId = $request['plate'].'-'."1";
@@ -35,7 +46,7 @@ class ParkingController extends Controller
             'plate_number' => $request['plate'],
             'code' => $uqId
         ]);
-        return redirect()->back()->withSuccess('Vehicle Checked In!');
+        return redirect()->back()->withSuccess('Vehicle Checked In!')->with('code', $uqId);
     }
 
     public function checkOut(Request $request){
