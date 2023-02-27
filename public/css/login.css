@@ -1,0 +1,35 @@
+input[type=text],
+input[type=email],
+input[type=password] {
+    width: 100%;
+    margin: 8px 0;
+    padding: 12px 15px;
+    display: inline-block;
+    border: 2px solid #FFDDD2;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+form{
+    margin: auto;
+    width: 40%;
+}
+.wrapper{
+    background-color: #E29578;
+    padding-top: 3%;
+    padding-bottom: 10%;
+}
+button {
+    width: 80%;
+    cursor: pointer;
+}
+
+.container{
+    background-color: #FFDDD2;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+h1{
+    text-align: center;
+}
