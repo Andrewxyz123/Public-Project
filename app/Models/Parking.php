@@ -30,7 +30,8 @@ class Parking extends Model
     protected $fillable = [
         'plate_number',
         'code',
-        'park_out'
+        'park_out',
+        'price'
     ];
 
     

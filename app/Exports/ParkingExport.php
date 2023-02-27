@@ -50,6 +50,7 @@ class ParkingExport implements FromQuery, WithHeadings
                 'Park Out',
                 'Unique Code',
                 'Plate Number',
+                'Price',
             ];
         }
 

@@ -20,7 +20,7 @@ class CreateTableParking extends Migration
             $table->timestamp('park_out')->default(DB::raw('NULL ON UPDATE CURRENT_TIMESTAMP'))->nullable();
             $table->string('code');
             $table->string('plate_number');
-            $table->integer('price')->nulllable();
+            $table->integer('price')->nulllable()->default(0);
         });
     }
 

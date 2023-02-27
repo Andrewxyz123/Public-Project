@@ -109,6 +109,7 @@
                     <th scope="col">Park Out</th>
                     <th scope="col">Code</th>
                     <th scope="col">Plate Number</th>
+                    <th scope="col">Price</th>
                   </tr>
                 </thead>
 
@@ -120,6 +121,7 @@
                         <td>{{$user->park_out}}</td>
                         <td>{{$user->code}}</td>
                         <td>{{$user->plate_number}}</td>
+                        <td>{{$user->price}}</td>
                     </tr>
                     @endforeach
                 </tbody>

@@ -23,9 +23,6 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/', function () {
-    if(Auth::check()){
-        return view('user-page');
-    }
     return view('login');
 });
 

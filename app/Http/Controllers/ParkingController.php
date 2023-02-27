@@ -70,6 +70,8 @@ class ParkingController extends Controller
 
             $price = 3000 + 3000 * $time;
 
+            DB::table('parking')->where('code', $code)->update(['price'=> $price]);
+
             return redirect()->back()->withSuccess('Vehicle Checked Out!')->with('time', $price);
         }
         return redirect()->back()->withErrors('Code not Found!');
